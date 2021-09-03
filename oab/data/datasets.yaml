@@ -1,0 +1,368 @@
+page-blocks:
+  name: "page-blocks"
+  short_description:
+  foldername: "page-blocks"
+  urls_dataset: ["https://pkgstore.datahub.io/machine-learning/page-blocks/page-blocks_csv/data/7c1adeffd3ce22181986879d92f9508c/page-blocks_csv.csv"]
+  destination_filenames: ["page_blocks.csv"]
+  dataset_format: 'csv'
+  filenames_to_concatenate: null
+  filename_in_folder: "page_blocks.csv" # Note: If we have multiple files, this should still be just one!
+  load_csv_arguments:
+    header: 0
+  class_labels: "last" # or "first"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test1.yaml" # for preprocessing and making an anomaly dataset
+  destination_yaml: "page-blocks_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science. For more information, check https://archive.ics.uci.edu/ml/datasets/Page+Blocks+Classification."
+  notes: "Original data is in .Z format, and unpacking this in Python without OS depencies is problematic. Therefore, the dataset is loaded from a different source."
+
+spambase:
+  name: "spambase"
+  short_description:
+  foldername: "spambase"
+  urls_dataset: ["https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/spambase.data"]
+  destination_filenames: ["spambase.csv"]
+  dataset_format: 'csv'
+  filenames_to_concatenate: null
+  filename_in_folder: "spambase.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test2.yaml"
+  destination_yaml: "spambase_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science."
+
+wilt:
+  name: "wilt"
+  short_description:
+  foldername: "wilt"
+  urls_dataset: ["https://archive.ics.uci.edu/ml/machine-learning-databases/00285/wilt.zip"]
+  destination_filenames: ["wilt.zip"]
+  dataset_format: 'zip'
+  filenames_to_concatenate: ["training.csv", "testing.csv"]
+  filename_in_folder: "wilt.csv"
+  load_csv_arguments:
+    header: 0
+  class_labels: "first"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test3.yaml"
+  destination_yaml: "wilt_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science."
+
+pulsar_star:
+  name: "pulsar_star"
+  short_description:
+  foldername: "pulsar_star"
+  urls_dataset: ["https://archive.ics.uci.edu/ml/machine-learning-databases/00372/HTRU2.zip"]
+  destination_filenames: ["HTRU2.zip"]
+  dataset_format: 'zip'
+  filenames_to_concatenate: null
+  filename_in_folder: "HTRU_2.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test4.yaml"
+  destination_yaml: "pulsar_star_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science."
+
+forest_cover:
+  name: "forest_cover"
+  short_description:
+  foldername: "forest_cover"
+  urls_dataset: ["https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/covtype.data.gz"]
+  destination_filenames: ["forest_cover.data.gz"]
+  dataset_format: 'gz_single_file' # note: this is not a folder that is compressed, but a single file
+  filenames_to_concatenate: null
+  filename_in_folder: "forest_cover.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test5.yaml"
+  destination_yaml: "forest_cover_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science."
+
+NASA_ground_data:
+  name: "NASA_ground_data"
+  short_description:
+  foldername: "NASA_ground_data"
+  urls_dataset: ["https://www.openml.org/data/get_csv/53950"]
+  destination_filenames: ["NASA_ground_data.csv"]
+  dataset_format: 'csv'
+  filenames_to_concatenate: null
+  filename_in_folder: "NASA_ground_data.csv"
+  load_csv_arguments:
+    header: 0
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test6.yaml"
+  destination_yaml: "NASA_ground_data_preprocessing.yaml"
+  credits: "Sayyad Shirabad, J. and Menzies, T.J. (2005) The PROMISE Repository of Software Engineering Databases. School of Information Technology and Engineering, University of Ottawa, Canada."
+
+wine:
+  name: "wine"
+  short_description: "In accordance with http://odds.cs.stonybrook.edu/wine-dataset/, labels 2 and 3 are normal, label 1 is anomalous."
+  foldername: "wine"
+  urls_dataset: ["https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data"]
+  destination_filenames: ["wine.csv"]
+  dataset_format: 'csv'
+  filenames_to_concatenate: null
+  filename_in_folder: "wine.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "first"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test7.yaml"
+  destination_yaml: "wine_preprocessing.yaml"
+  credits: "Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science."
+
+boston:
+  name: "boston"
+  short_description:
+  foldername: "boston"
+  urls_dataset: ["https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv"]
+  destination_filenames: ["boston.csv"]
+  dataset_format: 'csv'
+  filenames_to_concatenate: null
+  filename_in_folder: "boston.csv"
+  load_csv_arguments:
+    header: 0
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test9.yaml"
+  destination_yaml: "boston_preprocessing.yaml"
+  credits: "https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html"
+
+http:
+  name: "http"
+  short_description:
+  foldername: "http"
+  urls_dataset: ["https://www.dropbox.com/s/iy9ucsifal754tp/http.mat?dl=1"]
+  destination_filenames: ["http.mat"]
+  dataset_format: 'mat'
+  filenames_to_concatenate: null
+  filename_in_folder: "http.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "http_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/http-kddcup99-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+smtp:
+  name: "smtp"
+  short_description:
+  foldername: "smtp"
+  urls_dataset: ["https://www.dropbox.com/s/dbv2u4830xri7og/smtp.mat?dl=1"]
+  destination_filenames: ["smtp.mat"]
+  dataset_format: 'mat'
+  filenames_to_concatenate: null
+  filename_in_folder: "smtp.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "smtp_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/smtp-kddcup99-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+cardio:
+  name: "cardio"
+  short_description:
+  foldername: "cardio"
+  urls_dataset: ["https://www.dropbox.com/s/galg3ihvxklf0qi/cardio.mat?dl=1"]
+  destination_filenames: ["cardio.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "cardio.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "cardio_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/cardiotocogrpahy-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+thyroid:
+  name: "thyroid"
+  short_description:
+  foldername: "thyroid"
+  urls_dataset: ["https://www.dropbox.com/s/bih0e15a0fukftb/thyroid.mat?dl=1"]
+  destination_filenames: ["thyroid.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "thyroid.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "thyroid_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/thyroid-disease-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+musk:
+  name: "musk"
+  short_description:
+  foldername: "musk"
+  urls_dataset: ["https://www.dropbox.com/s/we6aqhb0m38i60t/musk.mat?dl=1"]
+  destination_filenames: ["musk.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "musk.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "musk_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/musk-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+pima: # no longer exists http://odds.cs.stonybrook.edu/pima-indians-diabetes-dataset/
+  name: "pima"
+  short_description:
+  foldername: "pima"
+  urls_dataset: ["https://www.dropbox.com/s/mvlwu7p0nyk2a2r/pima.mat?dl=1"]
+  destination_filenames: ["pima.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "pima.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "pima_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/pima-indians-diabetes-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+shuttle:
+  name: "shuttle"
+  short_description:
+  foldername: "shuttle"
+  urls_dataset: ["https://www.dropbox.com/s/mk8ozgisimfn3dw/shuttle.mat?dl=1"]
+  destination_filenames: ["shuttle.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "shuttle.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "shuttle_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/shuttle-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+breastw:
+  name: "breastw"
+  short_description:
+  foldername: "breastw"
+  urls_dataset: ["https://www.dropbox.com/s/g3hlnucj71kfvq4/breastw.mat?dl=1"]
+  destination_filenames: ["breastw.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "breastw.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "breastw_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/breast-cancer-wisconsin-original-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+arrhytmia:
+  name: "arrhytmia"
+  short_description:
+  foldername: "arrhytmia"
+  urls_dataset: ["https://www.dropbox.com/s/lmlwuspn1sey48r/arrhythmia.mat?dl=1"]
+  destination_filenames: ["arrhytmia.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "arrhytmia.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "arrhytmia_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/arrhytmia-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+ionosphere:
+  name: "ionosphere"
+  short_description:
+  foldername: "ionosphere"
+  urls_dataset: ["https://www.dropbox.com/s/lpn4z73fico4uup/ionosphere.mat?dl=1"]
+  destination_filenames: ["ionosphere.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "ionosphere.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "ionosphere_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/ionosphere-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+optdigits:
+  name: "optdigits"
+  short_description:
+  foldername: "optdigits"
+  urls_dataset: ["https://www.dropbox.com/s/w52ndgz5k75s514/optdigits.mat?dl=1"]
+  destination_filenames: ["optdigits.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "optdigits.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "optdigits_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/optdigits-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+mammography:
+  name: "mammography"
+  short_description:
+  foldername: "mammography"
+  urls_dataset: ["https://www.dropbox.com/s/tq2v4hhwyv17hlk/mammography.mat?dl=1"]
+  destination_filenames: ["mammography.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "mammography.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "mammography_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/mammography-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+annthyroid:
+  name: "annthyroid"
+  short_description:
+  foldername: "annthyroid"
+  urls_dataset: ["https://www.dropbox.com/s/aifk51owxbogwav/annthyroid.mat?dl=1"]
+  destination_filenames: ["annthyroid.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "annthyroid.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "annthyroid_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/annthyroid-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+pendigits:
+  name: "pendigits"
+  short_description:
+  foldername: "pendigits"
+  urls_dataset: ["https://www.dropbox.com/s/1x8rzb4a0lia6t1/pendigits.mat?dl=1"]
+  destination_filenames: ["pendigits.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "pendigits.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "pendigits_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/pendigits-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
+
+vertebral:
+  name: "vertebral"
+  short_description:
+  foldername: "vertebral"
+  urls_dataset: ["https://www.dropbox.com/s/5kuqb387sgvwmrb/vertebral.mat?dl=1"]
+  destination_filenames: ["vertebral.mat"]
+  dataset_format: 'mat_old'
+  filenames_to_concatenate: null
+  filename_in_folder: "vertebral.csv"
+  load_csv_arguments:
+    header: null
+  class_labels: "last"
+  url_yaml: "https://raw.githubusercontent.com/jandeller/test/main/test13.yaml"
+  destination_yaml: "vertebral_preprocessing.yaml"
+  credits: "Dataset provided by OODS on http://odds.cs.stonybrook.edu/vertebral-dataset/. If you use this for publications, please keep the publication policy in mind (http://odds.cs.stonybrook.edu/about-odds/). \n Shebuti Rayana (2016).  ODDS Library [http://odds.cs.stonybrook.edu]. Stony Brook, NY: Stony Brook University, Department of Computer Science."
