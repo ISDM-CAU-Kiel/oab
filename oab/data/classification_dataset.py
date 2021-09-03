@@ -258,15 +258,21 @@ class ClassificationDataset(AbstractClassificationDataset):
         return
 
 
-    def transform_labels_iqr(self) -> None:
+    def transform_labels_iqr(self, factor: float = 2) -> None:
         """Transforms labels into binary (normal/outlier) labels based on the
-        IQR of the original numerical labels. If numerical value is lower than
-        Q1 or larger than Q3, the data is an anomaly, which is indicated by 1.
+        IQR of the original numerical labels. The IQR is Q3 - Q1.
+        If numerical value is lower than Q1 - factor * IQR or larger than
+        Q3 + factor * IQR, the data is an anomaly, which is indicated by 1.
         Else, i.e., if the value lies within the IQR, it is normal, as indicated by 0.
+
+        :param factor: Determines length of "normal" interval, defaults to 2
         """
         q1 = np.quantile(self.labels, .25)
         q3 = np.quantile(self.labels, .75)
-        new_labels = (self.labels < q1) | (self.labels > q3)
+        IQR = q3 - q1
+        lower_bound = q1 - factor * IQR
+        upper_bound = q3 + factor * IQR
+        new_labels = (self.labels < lower_bound) | (self.labels > upper_bound)
         self.labels = new_labels.astype('int')
         return
 
