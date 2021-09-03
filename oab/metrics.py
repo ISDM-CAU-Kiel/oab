@@ -32,9 +32,6 @@ def precision_n_score(y: np.ndarray, y_pred_scores: np.ndarray,
 
     :return: Precision @ n score
     """
-    # TODO: does it have to be numpy array? Can we also do tf. and torch?
-    # TODO write tests
-    # (TODO) assert that arguments are valid to raise helpful errors
     return pyod_precision_n_scores(y, y_pred_scores, n=n)
 
 
@@ -52,8 +49,6 @@ def adjusted_precision_n_score(y: np.ndarray, y_pred_scores: np.ndarray,
 
     :return: Adjusted precision @ n score
     """
-
-    # TODO: check for matching sizes. Might actually do that in a util function
     if type(y_pred_scores) == list:
         number_instances = len(y_pred_scores)
     else:
@@ -107,7 +102,6 @@ def adjusted_average_precision_score(y: np.ndarray,
     :return: Average precision score
     """
     ap = average_precision_score(y, y_pred_scores)
-    # TODO: check for matching sizes. Might actually do that in a util function
     if type(y_pred_scores) == list:
         number_instances = len(y_pred_scores)
     else:
