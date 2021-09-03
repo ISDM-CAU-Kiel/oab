@@ -5,6 +5,8 @@ import pandas as pd
 from dataclasses import dataclass
 from collections.abc import Iterable
 from typing import List, Optional, Dict, Tuple
+from scipy.stats import friedmanchisquare
+from scikit_posthocs import posthoc_nemenyi_friedman
 from oab.metrics import (roc_auc_score, precision_n_score, adjusted_precision_n_score,
     average_precision_score, adjusted_average_precision_score, precision_recall_auc_score)
 from oab.data.abstract_classes import AnomalyDatasetDescription
@@ -360,6 +362,32 @@ class ComparisonObject():
             if verbose:
                 print(f"The following metrics existed in the data: {self.metrics}")
         return
+
+
+    def friedman_nemenyi(self, metric='roc_auc', verbose: bool = True):
+        """Calculates, prints and return the Friedman and Nemenyi test.
+        Note that the ordering of the algorithms can be seen from the first
+        printed table if verbose=True is set.
+
+        :param metric: Which metric to use the results from, defaults to 'roc_auc'
+        :param verbose: Print results when calculating, defaults to True
+
+        :return: A tuple with (friedman result, nemenyi result)
+        """
+        pd_dataframes_dict = self._get_results(split_on_metrics=True)
+        df = pd_dataframes_dict[metric][0]
+        if verbose:
+            print(f"Using the following dataframe:")
+            print(df)
+        values = df.T.values[:-1, :-1] # removes averages
+        friedmanresults = friedmanchisquare(*values)
+        if verbose:
+            print(f"Friedman results: {friedmanresults}")
+        nemenyiresults = posthoc_nemenyi_friedman(values)
+        if verbose:
+            print("Nemenyi results: (Note that the ordering of the algorithms is the same as in the first table)")
+            print(nemenyiresults)
+        return friedmanresults, nemenyiresults
 
 
     def print_results(self, split_on_metrics: bool = True,
