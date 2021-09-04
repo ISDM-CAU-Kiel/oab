@@ -4,6 +4,7 @@ This repository is supplementary material to
 
 ```
 .
+├── OAB_SupplementaryMaterial.pdf
 ├── README.md
 ├── notebooks
 │   ├── benchmark_image
@@ -18,6 +19,8 @@ This repository is supplementary material to
 └── test
 ```
 
+Supplementary material for the paper with additional information about the data sets supported by `oab` and experiment results with more evaluation metrics can be found at `OAB_SupplementaryMaterial.pdf`.
+
 `oab` contains the code for the oab package, and `test` contains `pytest` tests.
 
 `notebooks` provides Jupyter notebooks with example use cases for `oab`:
@@ -30,5 +33,5 @@ This repository is supplementary material to
 - `replicate_campos` contains a notebooks that was used to replicate results from the Campos et al. paper.
 - `reproducibility` contains notebooks showcasing how `oab` can be used to replicate a sampling and preprocessing procedure, making it easy to reproduce results and allowing custom preprocessing, sampling strategies, etc.
 
-To run the notebooks locally in a virtual environment, install the dependencies from `requirements.txt` and run the notebooks in jupyter lab. (In case there are problems with executing within the virtual environment in jupyter lab, [this](https://janakiev.com/blog/jupyter-virtual-envs/) might help.) 
+To run the notebooks locally in a virtual environment, install the dependencies from `requirements.txt` and run the notebooks in jupyter lab. (In case there are problems with executing within the virtual environment in jupyter lab, [this](https://janakiev.com/blog/jupyter-virtual-envs/) might help.)
 Alternatively, the notebooks can also be run on [Colab](https://drive.google.com/drive/folders/1ZKEHmldEsLhK6fhhhNgr_YthLUX_xusC?usp=sharing).
