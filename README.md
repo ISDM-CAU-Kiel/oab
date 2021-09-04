@@ -30,5 +30,5 @@ This repository is supplementary material to
 - `replicate_campos` contains a notebooks that was used to replicate results from the Campos et al. paper.
 - `reproducibility` contains notebooks showcasing how `oab` can be used to replicate a sampling and preprocessing procedure, making it easy to reproduce results and allowing custom preprocessing, sampling strategies, etc.
 
-To run the notebooks locally in a virtual environment, install the dependencies from `requirements.txt` and run the notebooks in jupyter lab. (In case there are problems with executing within the virtual environment in jupyter lab, [this](https://janakiev.com/blog/jupyter-virtual-envs/) might help.) 
-Alternatively, the notebooks can also be run on [Colab](https://drive.google.com/drive/folders/1ZKEHmldEsLhK6fhhhNgr_YthLUX_xusC?usp=sharing).
+To run the notebooks locally in a virtual environment, install the dependencies from `requirements.txt` and run the notebooks in jupyter lab. (In case there are problems with executing within the virtual environment in jupyter lab, [this tutorial](https://janakiev.com/blog/jupyter-virtual-envs/) might help.) 
+Alternatively, the notebooks can also be run on [Google-CoLab](https://drive.google.com/drive/folders/1ZKEHmldEsLhK6fhhhNgr_YthLUX_xusC?usp=sharing).
