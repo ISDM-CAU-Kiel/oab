@@ -23,7 +23,7 @@ Supplementary material for the paper with additional information about the data 
 
 `oab` contains the code for the oab package, and `test` contains `pytest` tests.
 
-`notebooks` provides Jupyter notebooks with example use cases for `oab`:
+`notebooks` provides Jupyter notebooks with example use cases for `oab_v0.1`:
 - `benchmark_image` contains the notebooks that were used to run the image experiments. This folder also contains the code for the algorithms used in these experiments.
 - `benchmark_tabular` contains the notebooks that were used to run the tabular data experiments. This folder also contains the code for AE+LOF.
 - `comparing_algorithms` contains a notebooks that explains how algorithms' performances can be compared with `oab`.
@@ -35,3 +35,21 @@ Supplementary material for the paper with additional information about the data 
 
 To run the notebooks locally in a virtual environment, install the dependencies from `requirements.txt` and run the notebooks in jupyter lab. (In case there are problems with executing within the virtual environment in jupyter lab, [this](https://janakiev.com/blog/jupyter-virtual-envs/) might help.)
 Alternatively, the notebooks can also be run on [Colab](https://drive.google.com/drive/folders/1ZKEHmldEsLhK6fhhhNgr_YthLUX_xusC?usp=sharing).
+
+`oab_v0.2` is the modified version of `oab_v0.1` which additionally contains jupyter notebook tutorials for the Anomaly Detection benchmarking in the following cases :
+<b>
+   1.  Semisupervised Anomaly Detection on Image Data
+
+   2.  Unsupervised Anomaly Detection on Image Data
+
+   3.  Semisupervised Anomaly Detection on Tabular Data
+
+   4.  Unsupervised Anomaly Detection on Tabular Data
+</b>
+  
+For the above cases, there is a  jupyter notebook per case located  at `/notebooks/benchmark_image` and `/notebooks/benchmark_tabular` in case of image datasets and tabular datasets respectively, which  provide structured explaination of every step for benchmarking in just one jupyter notebook.
+
+
+`oab_v0.3` improved `oab_v0.2` interms of storing benchmarking recipes . In `oab_v0.2` a different recipe file(.yaml) was created for every algorithm and dataset used in the benchmark, containing their corresponding information,  for reproducing the benchmark run. In contrast, `oab_v0.3` provides a functionality of creating only 1 recipe file per benchmark run storing information of all algorithms and datasets used in that run.
+
+The jupyter notebook tutorials for oab_v0.3 can be found in the folder `/Tutorials_v0.3/` , for each of the above mentioned case.
