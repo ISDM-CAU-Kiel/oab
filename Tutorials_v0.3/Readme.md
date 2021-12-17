@@ -5,7 +5,7 @@ This is the right place!
 
 
 
-The flow-chart structure decipicting how these juper-notebook tutorials should be used, can be visualized in the respective links below:
+The flow-chart structure decipicting how these jupyter-notebook tutorials should be used, can be visualized in the respective links below:
 
 
 1.[Semisupervised Anomaly Detection on Image Data](/Tutorials_v0.3/Flow-charts/semisup_img_flow.png)
