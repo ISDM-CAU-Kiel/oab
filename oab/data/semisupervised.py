@@ -4,7 +4,7 @@ import pandas as pd
 from typing import Union, Tuple, Optional
 from dataclasses import dataclass
 from oab.data.abstract_classes import AnomalyDataset, AnomalyDatasetDescription
-from oab.data.utils import _append_to_yaml, _make_yaml
+from oab.data.utils import _append_to_yaml, _make_yaml, _append_sampling_to_yaml
 from oab.data.utils_image import image_datasets, reshape_images
 
 
