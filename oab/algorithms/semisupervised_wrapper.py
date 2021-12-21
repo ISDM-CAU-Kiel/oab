@@ -49,7 +49,7 @@ class SemisupervisedWrapperToRecipe(AbstractWrapperToRecipe):
         }
         return getattr(obj, fit_method)(x, **params)
 
-    def track_decision_function(self, obj, params: Dict = {},
+    def track_decision_function(self, x ,obj, params: Dict = {},
         decision_function_method: str = 'decision_function'):
         self.decision_function_dict = {
             'method_name': decision_function_method,
@@ -57,11 +57,12 @@ class SemisupervisedWrapperToRecipe(AbstractWrapperToRecipe):
         }
         return getattr(obj, decision_function_method)(x, **params)
 
+    
     def store_recipe(self, yaml_path):
-        yaml_content = {
-            'init': self.init_dict,
-            'fit': self.fit_dict,
-            'decision_function': self.decision_scores_dict
-        }
-        with open(yaml_path, "w+") as stream:
-             yaml.dump(yaml_content, stream)
+            yaml_content = {
+                'init': self.init_dict,
+                'fit': self.fit_dict,
+                'decision_function': self.decision_function_dict
+            }
+            with open(yaml_path, "w+") as stream:
+                 yaml.dump(yaml_content, stream)
