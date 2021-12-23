@@ -1,0 +1,52 @@
+seed: 
+  - 42
+myImageDataset2:
+- dataset
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels: 
+- standard_functions:
+  - name: scale
+    parameters:
+      scaling_factor: 0.00392156862745098 
+- sampling:
+    unsupervised_multiple:
+      n: 25
+      contamination_rate: 0.5
+      n_steps: 1
+      flatten_images: false  
+cifar10:
+- dataset
+- standard_functions:
+  - name: scale
+    parameters:
+      scaling_factor: 0.00392156862745098  
+- sampling:
+    unsupervised_multiple:
+      n: 25
+      contamination_rate: 0.5
+      n_steps: 1
+      flatten_images: false
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+
+
+conv_ae:
+- algo_name
+- init:
+    params:
+      latent_dim: 100
+      epochs: 50
+      verbose: 0
+  fit:
+    method_name: fit
+    params: {}
+  decision_scores:
+    field_name: decision_scores_
+    
+- ConvAutoEncoder

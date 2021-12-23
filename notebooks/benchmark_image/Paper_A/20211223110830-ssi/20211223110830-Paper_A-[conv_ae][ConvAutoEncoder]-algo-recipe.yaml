@@ -1,0 +1,12 @@
+decision_function:
+  method_name: decision_function
+  params: {}
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    epochs: 50
+    latent_dim: 100
+    verbose: 0
+seed: 42

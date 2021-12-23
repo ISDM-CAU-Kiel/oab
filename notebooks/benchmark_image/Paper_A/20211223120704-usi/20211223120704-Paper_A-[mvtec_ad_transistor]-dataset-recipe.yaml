@@ -1,0 +1,23 @@
+standard_functions:
+- name: scale
+  parameters:
+    scaling_factor: 0.00392156862745098
+anomaly_dataset:
+  arguments:
+    normal_labels: 0
+    anomaly_labels:
+seed: 42
+sampling:
+  unsupervised_multiple:
+    n: 25
+    n_steps: 1
+    contamination_rate: 0.5
+    shuffle: true
+    random_seed: 42
+    apply_random_seed: true
+    keep_frequency_ratio_normals: false
+    equal_frequency_normals: false
+    keep_frequency_ratio_anomalies: false
+    equal_frequency_anomalies: false
+    include_description: true
+    flatten_images: false

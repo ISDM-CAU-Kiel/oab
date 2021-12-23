@@ -1,0 +1,17 @@
+decision_scores:
+  field_name: decision_scores_
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    CAE_parameters:
+      epochs: 50
+      latent_dim: 100
+      verbose: 0
+    LOF_parameters:
+      n_neighbors: 
+        lof_factor: 0.1
+        lof_minimum: 10      
+
+seed: 42
