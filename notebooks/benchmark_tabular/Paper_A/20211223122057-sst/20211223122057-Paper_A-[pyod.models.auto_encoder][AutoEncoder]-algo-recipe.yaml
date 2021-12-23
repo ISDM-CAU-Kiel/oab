@@ -1,0 +1,16 @@
+decision_function:
+  method_name: decision_function
+  params: {}
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    hidden_neurons:
+    - 6
+    - 3
+    - 3
+    - 6
+    random_state: 42
+    verbose: 0
+seed: 42
