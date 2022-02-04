@@ -1,3 +1,5 @@
+print(f"Credits: Ruff, Lukas and Vandermeulen, Robert A. and Goernitz, Nico and Binder, Alexander and Mueller, Emmanuel and Mueller, Klaus-Robert and Kloft, Marius (2020). International Conference on Learning Representations [https://openreview.net/forum?id=HkgH0TEYwH], Deep Semi-Supervised Anomaly Detection")
+
 import numpy as np
 import pandas as pd
 
