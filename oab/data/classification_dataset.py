@@ -27,11 +27,16 @@ class ClassificationDataset(AbstractClassificationDataset):
     """
 
     def __init__(self, values: np.ndarray, labels: np.ndarray,
-        name: Optional[str] = None):
+        name: Optional[str] = None, labels_semi_trn: np.ndarray = None):
         """Constructor method.
         """
         self.values = values
         self.labels = labels
+        if labels_semi_trn is None:
+            self.labels_semi_trn = labels
+        else:
+            self.labels_semi_trn = labels_semi_trn
+            
         self.name = name
         self.operations_performed = []
 
@@ -220,6 +225,7 @@ class ClassificationDataset(AbstractClassificationDataset):
             print(f"Deleted {len(self.values) - len(sorted_idxs)} rows.")
         self.values = self.values[sorted_idxs]
         self.labels = self.labels[sorted_idxs]
+        if self.labels_semi is not None: self.labels_semi = self.labels_semi[sorted_idxs]
 
         return
 
@@ -273,6 +279,7 @@ class ClassificationDataset(AbstractClassificationDataset):
         self.values = np.delete(self.values, rows_to_delete, axis=0)
         # also delete the corresponding labels
         self.labels = np.delete(self.labels, rows_to_delete, axis=0)
+        if self.labels_semi is not None: np.delete(self.labels_semi, rows_to_delete, axis=0)
         return
 
 

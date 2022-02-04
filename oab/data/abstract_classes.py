@@ -68,14 +68,19 @@ class AnomalyDataset(ABC):
     :param normal_labels: The label(s) for normal datapoints
     :param anomaly_labels: The label(s) for anomaly datapoints or `None` if all
         other (i.e., non-normal) labels should be used, defaults to None
+    :param native_trn_indexes: Indexes of training set samples related to a native dataset train test split
+    :param native_tst_indexes: Indexes of test set samples related to a native dataset train test split
     """
 
     def __init__(self, classification_dataset: AbstractClassificationDataset,
         normal_labels: Iterable, anomaly_labels: Optional = None,
-        yamlpath_append: Optional = None, yamlpath_new: Optional = None) -> None:
+        yamlpath_append: Optional = None, yamlpath_new: Optional = None, 
+        native_trn_indexes=None, native_tst_indexes=None) -> None:
         """Constructor method
         """
         self.classification_dataset = classification_dataset
+        self.native_trn_indexes = native_trn_indexes
+        self.native_tst_indexes = native_tst_indexes        
 
         # make sure that the normal_labels attribute is iterable
         if isinstance(normal_labels, Iterable):
