@@ -688,6 +688,9 @@ class GSemisupervisedAnomalyDataset(AnomalyDataset):
         
         X = self.classification_dataset.values
         y = self.classification_dataset.labels
+        
+        X=X/255       
+        
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1.-training_split, shuffle=True, random_state=seed)
         
         if verbose:
@@ -714,7 +717,7 @@ class GSemisupervisedAnomalyDataset(AnomalyDataset):
         x_trn = X_train[list_idx_trn]
         y_trn_semi = np.array(list_semi_labels_trn)
         x_tst = X_test
-        y_tst = y_test
+        y_tst = np.array([0 if v==normal_class else 1 for v in y_test])
         
         n_normal_trn = len(np.argwhere(np.isin(list_labels_trn, normal_classes)).flatten())
         n_normal_tst = len(np.argwhere(np.isin(y_test, normal_classes)).flatten())
