@@ -1,0 +1,144 @@
+myTabularDataset:
+- dataset
+- standard_functions:
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.6
+      max_contamination_rate: 0.4
+      n_steps: 10
+spambase:
+- dataset
+- standard_functions:
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.6
+      max_contamination_rate: 0.4
+      n_steps: 10
+annthyroid:
+- dataset
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- sampling:
+    training_split: 0.7
+    max_contamination_rate: 0.5
+    n_steps: 10
+    random_seed: 52
+myTabularDataset2:
+- dataset
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- sampling:
+    training_split: 0.7
+    max_contamination_rate: 0.5
+    n_steps: 10
+    random_seed: 52
+pyod.models.pca:
+- algo_name
+- init:
+    params:
+      n_components: 0.9
+      svd_solver: full
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- PCA
+seed:
+- 42
+pyod.models.auto_encoder:
+- algo_name
+- init:
+    params:
+      verbose: 0
+      hidden_neurons:
+      - 6
+      - 3
+      - 3
+      - 6
+      random_state: 42
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- AutoEncoder
+pyod.models.vae:
+- algo_name
+- init:
+    params:
+      encoder_neurons:
+      - 6
+      - 3
+      decoder_neurons:
+      - 3
+      - 6
+      verbose: 0
+      random_state: 42
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- VAE
