@@ -20,7 +20,7 @@ annthyroid:
     semisupervised_training_split_multiple:
       training_split: 0.7
       max_contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
       
 myTabularDataset2:
 - dataset
@@ -44,7 +44,7 @@ myTabularDataset2:
     semisupervised_training_split_multiple:
       training_split: 0.7
       max_contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
 pyod.models.vae:
 - algo_name
 - init:
