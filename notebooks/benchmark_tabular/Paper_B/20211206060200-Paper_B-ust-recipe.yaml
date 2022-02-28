@@ -20,7 +20,7 @@ annthyroid:
     unsupervised_multiple:
       n: 25
       contamination_rate: 0.05
-      n_steps: 1
+      n_steps: 10
 myTabularDataset2:
 - dataset
 - standard_functions:
@@ -43,7 +43,7 @@ myTabularDataset2:
     unsupervised_multiple:
       n: 25
       contamination_rate: 0.05
-      n_steps: 1
+      n_steps: 10
 pyod.models.abod:
 - algo_name
 - init:
