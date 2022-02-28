@@ -17,7 +17,7 @@ sampling:
   semisupervised_training_split_multiple:
     training_split: 0.7
     max_contamination_rate: 0.5
-    n_steps: 1
+    n_steps: 10
     random_seed: 42
     apply_random_seed: true
     keep_frequency_ratio_normals: false
