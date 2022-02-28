@@ -15,7 +15,7 @@ cifar10:
     semisupervised_training_split_multiple:
       training_split: 0.7
       max_contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
       flatten_images: false
 myImageDataset2:
 - dataset
@@ -32,7 +32,7 @@ myImageDataset2:
     semisupervised_training_split_multiple:
       training_split: 0.7
       max_contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
       flatten_images: false     
 conv_ae:
 - algo_name
