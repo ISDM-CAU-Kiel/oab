@@ -16,7 +16,7 @@ seed: 42
 sampling:
   unsupervised_multiple:
     n: 25
-    n_steps: 2
+    n_steps: 10
     contamination_rate: 0.5
     shuffle: true
     random_seed: 42
