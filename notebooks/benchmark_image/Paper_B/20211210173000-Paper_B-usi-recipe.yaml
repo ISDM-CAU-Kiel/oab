@@ -15,7 +15,7 @@ myImageDataset2:
     unsupervised_multiple:
       n: 25
       contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
       flatten_images: false  
 cifar10:
 - dataset
@@ -27,7 +27,7 @@ cifar10:
     unsupervised_multiple:
       n: 25
       contamination_rate: 0.5
-      n_steps: 1
+      n_steps: 10
       flatten_images: false
 - anomaly_dataset:
     arguments:
