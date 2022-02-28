@@ -48,8 +48,3 @@ Alternatively, the notebooks can also be run on [Colab](https://drive.google.com
 </b>
   
 For the above cases, there is a  jupyter notebook per case located  at `/notebooks/benchmark_image` and `/notebooks/benchmark_tabular` in case of image datasets and tabular datasets respectively, which  provide structured explaination of every step for benchmarking in just one jupyter notebook.
-
-
-`oab_v0.3` improved `oab_v0.2` interms of storing benchmarking recipes . In `oab_v0.2` a different recipe file(.yaml) was created for every algorithm and dataset used in the benchmark, containing their corresponding information,  for reproducing the benchmark run. In contrast, `oab_v0.3` provides a functionality of creating only 1 recipe file per benchmark run storing information of all algorithms and datasets used in that run.
-
-The jupyter notebook tutorials for `oab_v0.3` can be found in `branch_v0.3`, in the folder `/Tutorials_v0.3/` , for each of the above mentioned case.
