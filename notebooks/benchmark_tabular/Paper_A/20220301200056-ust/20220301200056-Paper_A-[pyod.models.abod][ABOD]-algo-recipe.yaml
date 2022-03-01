@@ -1,0 +1,11 @@
+decision_scores:
+  field_name: decision_scores_
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    n_neighbors:
+      abod_factor: 0.1
+      abod_minimum: 10
+seed: 42

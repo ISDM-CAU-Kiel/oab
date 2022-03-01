@@ -1,0 +1,11 @@
+decision_function:
+  method_name: decision_function
+  params: {}
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    n_components: 0.9
+    svd_solver: full
+seed: 42

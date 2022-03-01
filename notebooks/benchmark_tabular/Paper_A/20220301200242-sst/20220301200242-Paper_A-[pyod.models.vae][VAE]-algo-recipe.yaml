@@ -1,0 +1,17 @@
+decision_function:
+  method_name: decision_function
+  params: {}
+fit:
+  method_name: fit
+  params: {}
+init:
+  params:
+    decoder_neurons:
+    - 3
+    - 6
+    encoder_neurons:
+    - 6
+    - 3
+    random_state: 42
+    verbose: 0
+seed: 42
