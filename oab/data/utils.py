@@ -3,6 +3,9 @@ from os.path import isfile
 from pathlib import Path
 from ruamel.yaml import YAML
 import yaml
+import numpy as np
+import random
+import os
 
 def _append_to_yaml(filepath: str, key: str, value: Any) -> None:
     """Helper to append a key-value pair to an existing yaml file.
