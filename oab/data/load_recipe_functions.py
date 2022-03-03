@@ -101,6 +101,42 @@ def add_own_dataset(dataset_name: str, bw: bool =False):
 #above is a helper function for loading image dataset
 
 
+def algorithms_info_store(lst_benchmark_algorithms,recipe_path):
+   
+   for algo in lst_benchmark_algorithms:
+    
+    x=algo["algo_module_name"]
+    y=['algo_name',
+         
+         {
+         'init': 
+          
+               {
+
+       'params':algo["algo_parameters"]
+          
+               },
+        
+        'fit':algo["fit"]   
+        ,
+
+        'decision_function':algo["decision_function"]
+         },
+         
+         algo["algo_class_name"]
+        
+        ]
+                 
+     
+    yaml=YAML(typ='rt')
+    yaml_content = yaml.load(Path("./") / recipe_path)
+    yaml_content[x]=y
+
+def seed_info_store(seed,recipe_path):
+    yaml=YAML(typ='rt')
+    yaml_content = yaml.load(Path("./") / recipe_path)
+    yaml_content['seed']=[seed]          # adding seed to new recipe
+    yaml.dump(yaml_content, Path("./") /recipe_path)
     
 def dataset_info_store(dataset_name,new_recipe, info_type :str,content:list=None):
     #print(content)
