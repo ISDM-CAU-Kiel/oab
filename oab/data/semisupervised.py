@@ -171,7 +171,7 @@ class SemisupervisedAnomalyDataset(AnomalyDataset):
         self._test_contamination_rate(training_contamination_rate)
         self._test_contamination_rate(test_contamination_rate)
         if apply_random_seed:
-            np.random.seed(random_seed)
+            _set_seeds(random_seed)
 
         # # training set - clean
         # if np.isclose(0, training_contamination_rate):
@@ -318,7 +318,7 @@ class SemisupervisedAnomalyDataset(AnomalyDataset):
             _make_yaml(yamlpath_new, "sampling", {'semisupervised_explicit_numbers_single': kwargs})
 
         if apply_random_seed:
-            np.random.seed(random_seed)
+            _set_seeds(random_seed)
 
         n_normals = training_normals + test_normals
         n_anomalies = training_anomalies + test_anomalies
