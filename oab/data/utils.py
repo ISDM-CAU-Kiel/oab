@@ -91,3 +91,28 @@ def _get_dataset_dict(dataset_name: str) -> Dict:
         return yaml_dict[dataset_name]
     except KeyError:
         raise KeyError(f"Dataset {dataset_name} is not among the available datasets.")
+        
+def _set_seeds(seed):
+
+
+	""" sets all the required seed values for a run"""
+        
+	
+	random.seed(seed)
+	np.random.seed(seed) 
+	os.environ['PYTHONHASHSEED'] = str(seed)
+	try:
+	    import tensorflow as tf
+	    tf.random.set_seed(seed)
+	except Exception as e:
+	    pass    
+	try:
+	    import torch
+	    torch.cuda.manual_seed(seed)
+	    torch.cuda.manual_seed_all(seed)
+	    torch.backends.cudnn.deterministic = True
+	    torch.backends.cudnn.benchmark = False
+	    torch.use_deterministic_algorithms(True)
+	    torch.manual_seed(seed)
+	except Exception as e:
+	    pass      
