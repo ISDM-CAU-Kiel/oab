@@ -146,7 +146,7 @@ class UnsupervisedAnomalyDataset(AnomalyDataset):
             _make_yaml(yamlpath_new, "sampling", {'unsupervised_single': kwargs})
         self._test_contamination_rate(contamination_rate)
         if apply_random_seed:
-            np.random.seed(random_seed)
+            _set_seeds(random_seed)
 
         n_normals = int(n * (1 - contamination_rate))
         n_anomalies = n - n_normals
@@ -261,7 +261,7 @@ class UnsupervisedAnomalyDataset(AnomalyDataset):
             - A description of the dataset
         """
         if apply_random_seed:
-            np.random.seed(random_seed)
+            _set_seeds(random_seed)
 
         n = len(self.classification_dataset.values)
         n_normals = np.sum([np.sum(self.classification_dataset.labels == label) for label in self.normal_labels])
