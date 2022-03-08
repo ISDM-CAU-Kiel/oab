@@ -1,0 +1,79 @@
+annthyroid:
+- dataset
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels: 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.7
+      max_contamination_rate: 0.5
+      n_steps: 10
+      flatten_images: false
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+myTabularDataset2:
+- dataset
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels: 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.7
+      max_contamination_rate: 0.5
+      n_steps: 10
+      flatten_images: false
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+pyod.models.vae:
+- algo_name
+- init:
+    params:
+      encoder_neurons:
+      - 6
+      - 3
+      decoder_neurons:
+      - 3
+      - 6
+      verbose: 0
+      random_state: 42
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- VAE
+seed:
+  - 42
