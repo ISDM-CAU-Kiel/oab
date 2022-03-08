@@ -1,0 +1,77 @@
+myImageDataset2:
+- dataset
+- standard_functions:
+  - name: scale
+    parameters:
+      scaling_factor: 0.00392156862745098
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.7
+      max_contamination_rate: 0.5
+      n_steps: 10
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+      flatten_images: false
+mnist:
+- dataset
+- standard_functions:
+  - name: scale
+    parameters:
+      scaling_factor: 0.00392156862745098
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    semisupervised_training_split_multiple:
+      training_split: 0.7
+      max_contamination_rate: 0.5
+      n_steps: 10
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+      flatten_images: false
+cae_iforest:
+- algo_name
+- init:
+    params:
+      CAE_parameters:
+        latent_dim: 100
+        epochs: 50
+        verbose: 0
+      IForest_parameters:
+        random_state: 42
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- CAEIForest
+conv_ae:
+- algo_name
+- init:
+    params:
+      latent_dim: 100
+      epochs: 50
+      verbose: 0
+  fit:
+    method_name: fit
+    params: {}
+  decision_function:
+    method_name: decision_function
+    params: {}
+- ConvAutoEncoder
+seed:
+- 42
