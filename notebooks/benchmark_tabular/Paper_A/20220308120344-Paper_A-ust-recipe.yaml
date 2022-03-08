@@ -1,0 +1,152 @@
+myTabularDataset:
+- dataset
+- standard_functions:
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    unsupervised_multiple:
+      n: 25
+      contamination_rate: 0.05
+      n_steps: 10
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+      flatten_images: false
+      shuffle: true
+      include_description: true
+spambase:
+- dataset
+- standard_functions:
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+  - name: delete_duplicates
+    parameters: {}
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- sampling:
+    unsupervised_multiple:
+      n: 25
+      contamination_rate: 0.05
+      n_steps: 10
+      apply_random_seed: true
+      keep_frequency_ratio_normals: false
+      equal_frequency_normals: false
+      keep_frequency_ratio_anomalies: false
+      equal_frequency_anomalies: false
+      flatten_images: false
+      shuffle: true
+      include_description: true
+annthyroid:
+- dataset
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- sampling:
+    n: 25
+    contamination_rate: 0.05
+    n_steps: 10
+    flatten_images: false
+    apply_random_seed: true
+    keep_frequency_ratio_normals: false
+    equal_frequency_normals: false
+    keep_frequency_ratio_anomalies: false
+    equal_frequency_anomalies: false
+    shuffle: true
+    include_description: true
+    random_seed: 42
+myTabularDataset2:
+- dataset
+- anomaly_dataset:
+    arguments:
+      normal_labels:
+      - 0
+      anomaly_labels:
+- standard_functions:
+  - name: normalize_columns
+    parameters:
+      cols_to_normalize:
+      - 0
+      - 1
+  - name: treat_missing_values
+    parameters:
+      missing_value: np.nan
+      delete_attributes: true
+  - name: delete_duplicates
+    parameters: {}
+- sampling:
+    n: 25
+    contamination_rate: 0.05
+    n_steps: 10
+    flatten_images: false
+    apply_random_seed: true
+    keep_frequency_ratio_normals: false
+    equal_frequency_normals: false
+    keep_frequency_ratio_anomalies: false
+    equal_frequency_anomalies: false
+    shuffle: true
+    include_description: true
+    random_seed: 42
+pyod.models.knn:
+- algo_name
+- init:
+    params:
+      n_neighbors:
+        knn_factor: 0.05
+        knn_minimum: 10
+  fit:
+    method_name: fit
+    params: {}
+  decision_scores:
+    field_name: decision_scores_
+- KNN
+pyod.models.abod:
+- algo_name
+- init:
+    params:
+      n_neighbors:
+        abod_factor: 0.1
+        abod_minimum: 10
+  fit:
+    method_name: fit
+    params: {}
+  decision_scores:
+    field_name: decision_scores_
+- ABOD
+seed:
+- 42
