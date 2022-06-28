@@ -102,39 +102,67 @@ def add_own_dataset(dataset_name: str, bw: bool =False):
 
 
     
-def dataset_info_store(dataset_name,new_recipe, info_type :str,content:list=None):
-    #print(content)
+def dataset_info_store(dataset_name,new_recipe, info_type :str,content:list=None,modify:bool=True):
+    #print('conten\n',content)
+    
     if not Path(new_recipe).is_file():
-        
+        #print('bani')
         _make_yaml(new_recipe,dataset_name,['dataset'])
+
+
+    #print('ok---')
     yaml=YAML(typ='rt')                                       
     yaml_content = yaml.load(Path("./") /new_recipe) 
-    if dataset_name not in list(loads(dumps(yaml_content)).keys()): 
-        
-        yaml_content[dataset_name]=[]
-        yaml_content[dataset_name].append('dataset')
+    if not modify:
+        if dataset_name not in list(loads(dumps(yaml_content)).keys()): 
+
+            yaml_content[dataset_name]=[]
+            yaml_content[dataset_name].append('dataset')
+
+        if  info_type in ['standard_functions','custom_functions']:
+                 data=[]
+                 for i in content:
+                   function={'name':i[0],'parameters':i[1]} 
+                   if function not in data:
+                     data.append(function) 
+        if info_type=='anomaly_dataset':
+
+            data={'arguments':{'normal_labels':content,'anomaly_labels':None}}
+        if info_type=='sampling':
+
+            data=content[0]   
+
+        if info_type not in [str(*i)  for i in loads(dumps(yaml_content[dataset_name])) if isinstance(i,dict)]:
+                 yaml_content[dataset_name].append({info_type:data})   
+
+
+
+        yaml.dump(yaml_content, Path("./") /new_recipe)
+
+    else:
+            #print('Removing previous  information(if any) and storing new information ---')
+            try:
+                #inf_typ=
+                #print(loads(dumps(yaml_content[dataset_name])))
+                for ind,i in enumerate(loads(dumps(yaml_content[dataset_name]))[1:],1):
+                    #print(ind,list(i.keys())[0],'ll')
+                    if info_type==list(i.keys())[0]:
+                        #print('here',loads(dumps(yaml_content[dataset_name][ind])))
+                        del yaml_content[dataset_name][ind]
+                        #print('after here ',loads(dumps(yaml_content[dataset_name])))
+                #sys.exit(0)
+            except Exception as e:
+                #print('\n-----------\n')
+                print(f'Cannot modify dataset : {e} since it is not present in the recipe, set modify=False and rerun') 
+                #print('\n-----------\n')
+                pass
+            #print('yaha agye recursive')
+            yaml.dump(yaml_content, Path("./") /new_recipe)
+            #sys.exit(0)
+            dataset_info_store(dataset_name,new_recipe, info_type ,content,modify=False)
     
-    if  info_type in ['standard_functions','custom_functions']:
-             data=[]
-             for i in content:
-               function={'name':i[0],'parameters':i[1]} 
-               if function not in data:
-                 data.append(function) 
-    if info_type=='anomaly_dataset':
 
-        data={'arguments':{'normal_labels':content,'anomaly_labels':None}}
-    if info_type=='sampling':
-
-        data=content[0]   
-
-    if info_type not in [str(*i)  for i in loads(dumps(yaml_content[dataset_name])) if isinstance(i,dict)]:
-             yaml_content[dataset_name].append({info_type:data})   
-
-
-                
-    yaml.dump(yaml_content, Path("./") /new_recipe)
-    
-    return
+    return 
     
 #function above  is for storing standard preprocessing function,anomaly-dataset-conversion and sampling paramters in a new recipe file
 
